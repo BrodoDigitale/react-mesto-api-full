@@ -1,0 +1,7 @@
+.edit-form__error {
+    color: red;
+    width: 358px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 15px;
+}

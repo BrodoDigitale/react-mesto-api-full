@@ -1,0 +1,27 @@
+.edit-form__input {
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 27px;
+    border:none;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    width: 358px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.edit-form__input:focus {
+    border: none;
+}
+
+.edit-form__input:last-of-type {
+    margin-top: 30px;
+}
+.edit-form__input:first-of-type {
+    margin-top: 16px;
+}
+@media screen and (max-width: 767px) {
+    .edit-form__input {
+    width: 238px;
+}
+}

@@ -1,0 +1,11 @@
+.popup__img {
+    align-self: center;
+    max-width: 70vw;
+    max-height: 70vh;
+}
+
+@media screen and (max-width: 767px) {
+    .popup__img {
+        max-width: 240px;
+    }
+}

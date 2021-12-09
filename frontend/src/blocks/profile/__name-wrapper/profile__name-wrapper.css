@@ -1,0 +1,12 @@
+.profile__name-wrapper {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    column-gap: 25px;
+    align-items: end;
+}
+
+@media screen and (max-width: 767px) {
+    .profile__name-wrapper {
+        column-gap: 10px;
+    }
+}

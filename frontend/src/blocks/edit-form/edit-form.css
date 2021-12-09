@@ -1,0 +1,22 @@
+.edit-form {
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px 36px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+ 
+}
+
+@media screen and (max-width: 767px) {
+    .edit-form {
+    padding: 0;
+    align-items: center;
+    width: 282px;
+    margin:0 auto;
+    margin-top: 123px;
+}
+}

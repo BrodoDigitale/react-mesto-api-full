@@ -1,0 +1,14 @@
+.edit-form__header {
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 900;
+    margin: 34px 0 38px;
+}
+
+@media screen and (max-width: 767px) {
+    .edit-form__header {
+        font-size: 18px;
+        line-height: 22px;
+        margin: 25px 0 70px;
+}
+}

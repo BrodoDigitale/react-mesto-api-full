@@ -1,0 +1,6 @@
+.header__text-wrapper {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    column-gap: 24px;
+    align-items: center;
+}

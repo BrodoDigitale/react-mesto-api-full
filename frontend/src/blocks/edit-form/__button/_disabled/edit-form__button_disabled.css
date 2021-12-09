@@ -1,0 +1,10 @@
+.edit-form__button_disabled {
+    background-color: transparent;
+    border: 1px solid rgba(0,0,0,.1);
+    color: rgba(0,0,0,.1);
+
+}
+
+.edit-form__button_disabled:hover {
+    cursor: auto;
+}
