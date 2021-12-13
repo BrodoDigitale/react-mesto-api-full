@@ -21,7 +21,7 @@ export function Register(props) {
 
     return (
     <div className="page">
-        <Header headerButtonText="Войти" onClick={() => history.push('/sign-in')}/>
+        <Header headerButtonText="Войти" onClick={() => history.push('/signin')}/>
         <form className="auth-form" onSubmit={handleSubmit}>
         <h2 className="auth-form__header">Регистрация</h2>
         <input 

@@ -175,7 +175,7 @@ export function App() {
             .then((res) => {
             if(res.data) {
                 setIsRegistrationSuccessful(true)
-                history.push('/sign-in')
+                history.push('/signin')
                 }
             })
             .catch(() => {setIsRegistrationSuccessful(false)})
@@ -184,7 +184,7 @@ export function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-        {loggedIn ? <Redirect to="/" /> : <Redirect to="/sign-in" />}
+        {loggedIn ? <Redirect to="/" /> : <Redirect to="/signin" />}
         <Switch>
             <Route exact path="/">
             <>
@@ -209,12 +209,12 @@ export function App() {
             </div>
             </>
             </Route>
-            <Route path="/sign-up">
+            <Route path="/signup">
                 <Register 
                 onRegister={handleRegister}
                 />
             </Route>
-            <Route path="/sign-in">
+            <Route path="/signin">
                 <Login 
                 onLogin={handleLogin}
                 />

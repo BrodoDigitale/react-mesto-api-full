@@ -23,7 +23,7 @@ export function Login(props) {
     return (
     <>
     <div className="page">
-        <Header headerButtonText="Регистрация" onClick={() => history.push('/sign-up')}/>
+        <Header headerButtonText="Регистрация" onClick={() => history.push('/signup')}/>
         <form className="auth-form" onSubmit={handleSubmit}>
         <h2 className="auth-form__header">Вход</h2>
         <input 
