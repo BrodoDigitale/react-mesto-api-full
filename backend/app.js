@@ -5,6 +5,7 @@ const { celebrate, Joi } = require('celebrate');
 const { errors } = require('celebrate');
 const validator = require('validator');
 const auth = require('./middlewares/auth');
+const corsValidator = require('./middlewares/cors-validator');
 const { login } = require('./controllers/login');
 const { createUser } = require('./controllers/users');
 const usersRoutes = require('./routes/users');
@@ -28,6 +29,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 });
 // логгер запросов
 app.use(requestLogger);
+app.use(corsValidator);
 // рутинг
 app.post('/signin', celebrate(
   {
