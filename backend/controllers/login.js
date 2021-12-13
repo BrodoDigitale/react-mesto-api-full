@@ -10,7 +10,7 @@ module.exports.login = (req, res, next) => {
         'c77b130afd3bf9cd159f21ede3c1673cc1ff764c5e37b0a0d675d13394f6e5e7',
         { expiresIn: '7d' },
       );
-      res.cookie('jwt', token, { httpOnly: true }).send({ message: 'Вы успешно авторизованы' });
+      res.send({ message: 'Вы успешно авторизованы', token });
     })
     .catch(next);
 };
