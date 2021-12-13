@@ -43,7 +43,7 @@ export function Register(props) {
         onChange={e => setPassword(e.target.value)}
         required />
         <button className="auth-form__button" type="submit">Зарегистрироваться</button>
-        <Link className="auth-form__link transition" to="/sign-in">Уже зарегистрированы? Войти</Link>
+        <Link className="auth-form__link transition" to="/signin">Уже зарегистрированы? Войти</Link>
         </form>
     </div>
     )

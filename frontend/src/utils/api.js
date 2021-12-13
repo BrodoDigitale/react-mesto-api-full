@@ -83,7 +83,7 @@ class Api {
   
 //Создание api
 export const api = new Api({
-    url: 'https://mesto.nomoreparties.co/v1/cohort-26',
+    url: 'http://api.mesto.sensi.nomoredomains.rocks',
     headers: {
         "authorization": "ff36f33a-78de-4788-b2e8-96f517dc0490",
         "Content-Type": "application/json"
