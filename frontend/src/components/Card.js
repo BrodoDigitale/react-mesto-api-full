@@ -16,14 +16,14 @@ const user = React.useContext(CurrentUserContext);
 
 //Отисовка корзины
 // Определяем, являемся ли мы владельцем текущей карточки
-const isOwn = props.card.owner._id === user._id;
+const isOwn = props.card.owner === user._id;
 const cardDeleteButtonClassName = (
   `${isOwn ? 'elements__delete-btn' : 'elements__delete-btn_disabled'}`
 ); 
 
 //Отисовка лайков
 // Определяем, есть ли у карточки лайк, поставленный текущим пользователем
-const isLiked = props.card.likes.some(i => i._id === user._id);
+const isLiked = props.card.likes.some(i => i === user._id);
 const cardLikeButtonClassName = (
     `${isLiked ? 'elements__like-icon_active' : 'elements__like-icon'}`
   ); 

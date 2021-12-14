@@ -30,17 +30,6 @@ export function App() {
     const [userEmail, setUserEmail] = React.useState('email@mail.com');
     //стейт авторизации юзера
     const [loggedIn, setIsLoggedIn] = React.useState(false);
-    //задания стейта юзера при монтировании
-    const [currentUser, setCurrentUser] = React.useState([]);
-    React.useEffect(() => {
-        api.getUserData()
-        .then((res)=> {
-            setCurrentUser(res)
-        })
-        .catch(err => console.log(err));
-      }, 
-      []);
-
     function handleEditAvatarClick() {
         setIsEditAvatarPopupOpen(true)
     }
@@ -76,20 +65,101 @@ export function App() {
         })
         .catch(err => console.log(err));
     }
+    
+    //Проверка токена при загрузке страницы 
+    React.useEffect(() => {
+        const jwt = localStorage.getItem('jwt');
+        if (jwt) {
+            //setIsLoggedIn(true)
+            checkTokenValidity(jwt)
+            //setUserEmail(res.data.email)
+            .then((res) => {
+                if(res) {
+                    setIsLoggedIn(true)
+                    setUserEmail(res.email)
+                }
+            }) 
+            .catch(err => console.log(err))
+            //checkTokenValidity(jwt)
+            //.then((res) => {
+                //if(res) {
+                    //setIsLoggedIn(true)
+                    //setUserEmail(res.data.email)
+                //}
+            //}) 
+        }
+      }, []);
+
+    //Переадресация на главную страницу, если пользователь уже залогинен
+   
+    React.useEffect(() => {
+        if (loggedIn) history.push('/');
+      }, [loggedIn]);
+
+     //Логин
+    function handleLogin(data) {
+        if (!data.email || !data.password){
+            return;
+          }
+        login(data)
+          .then((res) => { 
+            if (!res) throw new Error('Неправильные имя пользователя или пароль');
+            if (res) {
+            localStorage.setItem('jwt', res.token);
+            setUserEmail(data.email)
+            setIsLoggedIn(true);
+            }
+            })
+            .catch((err) => (console.log(err)))
+     }
+    
+    //Логаут
+    function handleLogout() {
+        localStorage.removeItem('jwt');
+        setIsLoggedIn(false);
+    }
+    
+    //Регистрация
+    function handleRegister(data) {
+        register(data)
+            .then((res) => {
+            if(res._id) {
+                setIsRegistrationSuccessful(true)
+                history.push('/signin')
+                }
+            })
+            .catch(() => {setIsRegistrationSuccessful(false)})
+            .finally(() => {setIsInfoToolOpen(true)})
+    }
+    //задания стейта юзера при монтировании
+        const [currentUser, setCurrentUser] = React.useState([]);
+        React.useEffect(() => {
+            if(loggedIn) {
+                api.getUserData()
+                .then((res)=> {
+                    setCurrentUser(res)
+                })
+                .catch(err => console.log(err));
+            }
+          }, 
+          [loggedIn]);
     //Карточки
     const [cards, renderCards] = React.useState([]);
 
     React.useEffect(() => {
-    api.getInitialCards()
+    if(loggedIn) {
+        api.getInitialCards()
         .then((res)=> {
             renderCards(res)
         })
         .catch(err => console.log(err));
-    }, []);
+    }
+    }, [loggedIn]);
+
     //Функция лайков 
     function handleCardLike(card) {
         // Снова проверяем, есть ли уже лайк на этой карточке
-        const isLiked = card.likes.some(i => i._id === currentUser._id);
+        const isLiked = card.likes.some(i => i === currentUser._id);
         // Отправляем запрос в API и получаем обновлённые данные карточки
         api.changeLikeCardStatus(card._id, isLiked)
         .then((newCard) => {
@@ -125,62 +195,6 @@ export function App() {
         //!!clean up функция через return
         return () => document.removeEventListener('keydown', closeByEscape)
     }, [])
-
-    //Проверка токена при загрузке страницы 
-    React.useEffect(() => {
-        const jwt = localStorage.getItem('jwt');
-        if (jwt) {
-            checkTokenValidity(jwt)
-            .then((res) => {
-                if(res) {
-                    setIsLoggedIn(true)
-                    setUserEmail(res.data.email)
-                }
-            }) 
-            .catch(err => console.log(err))
-        }
-      }, []);
-    //Переадресация на главную страницу, если пользователь уже залогинен
-   
-    React.useEffect(() => {
-        if (loggedIn) history.push('/');
-      }, [loggedIn]);
-
-     //Логин
-    function handleLogin(data) {
-        if (!data.email || !data.password){
-            return;
-          }
-        login(data)
-          .then((res) => { 
-            if (!res) throw new Error('Неправильные имя пользователя или пароль');
-            if (res) {
-            setUserEmail(data.email)
-            setIsLoggedIn(true);
-            localStorage.setItem('jwt', res.token);
-            }
-            })
-            .catch((err) => (console.log(err)))
-     }
-    
-    //Логаут
-    function handleLogout() {
-        localStorage.removeItem('jwt');
-        setIsLoggedIn(false);
-    }
-    
-    //Регистрация
-    function handleRegister(data) {
-        register(data)
-            .then((res) => {
-            if(res.data) {
-                setIsRegistrationSuccessful(true)
-                history.push('/signin')
-                }
-            })
-            .catch(() => {setIsRegistrationSuccessful(false)})
-            .finally(() => {setIsInfoToolOpen(true)})
-    }
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -251,4 +265,3 @@ export function App() {
 }
 
 export default App
-
