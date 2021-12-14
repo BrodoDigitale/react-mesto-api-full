@@ -2,7 +2,7 @@
 const allowedCors = [
   'http://mesto.sensi.nomoredomains.rocks',
   'https://mesto.sensi.nomoredomains.rocks',
-  'localhost:3000'
+  'https://localhost'
 ];
 module.exports = (req, res, next) => {
   const { origin } = req.headers; // Сохраняем источник запроса в переменную origin

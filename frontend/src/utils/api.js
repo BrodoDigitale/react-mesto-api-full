@@ -85,7 +85,7 @@ class Api {
 export const api = new Api({
     url: 'http://api.mesto.sensi.nomoredomains.rocks',
     headers: {
-        "authorization": `Bearer ${localStorage.getItem('token')}`,
+        "authorization": `Bearer ${localStorage.getItem('jwt')}`,
         "Content-Type": "application/json"
     }
   })
