@@ -2,6 +2,7 @@
 const allowedCors = [
   'http://mesto.sensi.nomoredomains.rocks',
   'https://mesto.sensi.nomoredomains.rocks',
+  'http://localhost:3000',
   'https://localhost:3000'
 ];
 module.exports = (req, res, next) => {
