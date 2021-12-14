@@ -1,5 +1,5 @@
 
-  const BASE_URL = 'http://api.mesto.sensi.nomoredomains.rocks';
+  const BASE_URL = 'https://api.mesto.sensi.nomoredomains.rocks';
 
   //функция проверки ответа от сервера
   const handleResponse = (res) => {
