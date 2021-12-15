@@ -11,19 +11,19 @@ const userSchema = new mongoose.Schema({
     required: false,
     minlength: 2,
     maxlength: 30,
-    default: 'Жак-Ив Кусто',
+    default: 'Б.У. Кашкин',
   },
   about: {
     type: String,
     required: false,
     minlength: 2,
     maxlength: 30,
-    default: 'Исследователь',
+    default: 'Уральский поэт',
   },
   avatar: {
     type: String,
     required: false,
-    default: 'https://pictures.s3.yandex.net/resources/jacques-cousteau_1604399756.png',
+    default: 'https://art-mx.ru/sites/default/files/bukashkin.jpg',
     validate: {
       validator: (v) => isURL(v),
       message: 'Поле avatar не является ссылкой',

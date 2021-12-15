@@ -70,9 +70,7 @@ export function App() {
     React.useEffect(() => {
         const jwt = localStorage.getItem('jwt');
         if (jwt) {
-            //setIsLoggedIn(true)
             checkTokenValidity(jwt)
-            //setUserEmail(res.data.email)
             .then((res) => {
                 if(res) {
                     setIsLoggedIn(true)
@@ -80,13 +78,6 @@ export function App() {
                 }
             }) 
             .catch(err => console.log(err))
-            //checkTokenValidity(jwt)
-            //.then((res) => {
-                //if(res) {
-                    //setIsLoggedIn(true)
-                    //setUserEmail(res.data.email)
-                //}
-            //}) 
         }
       }, []);
 
@@ -94,7 +85,7 @@ export function App() {
    
     React.useEffect(() => {
         if (loggedIn) history.push('/');
-      }, [loggedIn]);
+      }, [history, loggedIn]);
 
      //Логин
     function handleLogin(data) {
