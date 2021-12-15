@@ -1,4 +1,6 @@
 const express = require('express');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const { celebrate, Joi } = require('celebrate');
@@ -81,3 +83,33 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
+
+// ТЕСТ КЛЮЧЕЙ JWT
+const YOUR_JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI5MGYwMDQwZjRlOTMxMDVjMmU1NDEiLCJpYXQiOjE2Mzk1NTkyOTUsImV4cCI6MTY0MDE2NDA5NX0.9r5TYTg2r4l6QdVgyDkMi-U3FH5a8AZNSXT78RWC0d8';
+// вставьте сюда JWT, который вернул публичный сервер
+
+const SECRET_KEY_DEV = 'fc3dc3850a743218568b5738df1d608128f7840ed98c6d8ca78691c6947f75a0';
+// вставьте сюда секретный ключ для разработки из кода
+
+try {
+  // eslint-disable-next-line no-unused-vars
+  const payload = jwt.verify(YOUR_JWT, SECRET_KEY_DEV);
+
+  console.log('\x1b[31m%s\x1b[0m', `
+    Надо исправить. В продакшне используется тот же
+    секретный ключ, что и в режиме разработки.
+  `);
+} catch (err) {
+  if (err.name === 'JsonWebTokenError' && err.message === 'invalid signature') {
+    console.log(
+      '\x1b[32m%s\x1b[0m',
+      'Всё в порядке. Секретные ключи отличаются',
+    );
+  } else {
+    console.log(
+      '\x1b[33m%s\x1b[0m',
+      'Что-то не так',
+      err,
+    );
+  }
+}

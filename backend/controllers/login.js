@@ -5,7 +5,7 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 
 const SECRET_KEY_DEV = 'fc3dc3850a743218568b5738df1d608128f7840ed98c6d8ca78691c6947f75a0';
 
-module.exports.login = (req, res, next) => {
+const login = (req, res, next) => {
   const { email, password } = req.body;
   User.findUserByCredentials(email, password)
     .then((user) => {
@@ -21,4 +21,5 @@ module.exports.login = (req, res, next) => {
 
 module.exports = {
   SECRET_KEY_DEV,
+  login,
 };
