@@ -7,7 +7,9 @@ Functionality is similar to instagram and allows to download and share photos of
 
 **Server IP: 51.250.13.149**
 
-**Tech stack:  
+![](frontend/public/mesto-react_preview_640px.gif)
+
+**Tech stack:**  
 - Html / CSS
 - Javascript
 - React
@@ -15,9 +17,7 @@ Functionality is similar to instagram and allows to download and share photos of
 - Express
 - Mongo DB
 
-![](frontend/public/mesto-react_preview_640px.gif)
-
-### Implemented functionality: 
+**Implemented functionality:** 
 - Authorization and registration of users
 - User profile editing
 - Creation of new posts
