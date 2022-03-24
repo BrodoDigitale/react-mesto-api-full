@@ -1,6 +1,23 @@
-# react-mesto-api-full
-Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями. Бэкенд расположите в директории `backend/`, а фронтенд - в `frontend/`. 
+## React-mesto-api-full  
 
-Проект размещен здесь: https://mesto.sensi.nomoredomains.rocks
+`Mesto` project repository includes front-end and back-end parts of application.  
+Functionality is similar to instagram and allows to download and share photos of different places, like posts or dislike previously liked posts.
 
-IP адрес сервера: 51.250.13.149
+#Implemented functionality: 
+- Authorization and registration of users,
+- User profile editing,
+- Creation of new posts,
+- Deletion of posts,
+- Liking and disliking of posts.
+
+Project location: https://mesto.sensi.nomoredomains.rocks
+
+Server IP: 51.250.13.149
+
+#Tech stack:  
+- Html / CSS
+- Javascript
+- React
+- NodeJs
+- Express
+- Mongo DB
