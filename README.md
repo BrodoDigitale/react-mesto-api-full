@@ -4,7 +4,7 @@
 Functionality is similar to instagram and allows to download and share photos of different places, like posts or dislike previously liked posts.
 
 **[See deploy of the project](https://mesto.sensi.nomoredomains.rocks)**  
-**[Figma layout](https://www.figma.com/file/crdG0H4KMEK8C3P7KDSoPq/Diploma_Sensi)**  
+**[Figma layout](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)**  
 
 **Server IP: 51.250.13.149**
 
