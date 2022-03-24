@@ -3,6 +3,7 @@
 `Mesto` project repository includes front-end and back-end parts of application.  
 Functionality is similar to instagram and allows to download and share photos of different places, like posts or dislike previously liked posts.
 
+https://github.com/BrodoDigitale/react-mesto-api-full/blob/main/frontend/public/mesto-react_preview_640px.gif
 ### Implemented functionality: 
 - Authorization and registration of users,
 - User profile editing,
