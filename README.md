@@ -3,11 +3,11 @@
 `Mesto` project repository includes front-end and back-end parts of application.  
 Functionality is similar to instagram and allows to download and share photos of different places, like posts or dislike previously liked posts.
 
-### Project location: https://mesto.sensi.nomoredomains.rocks
+**Project location: https://mesto.sensi.nomoredomains.rocks**
 
-### Server IP: 51.250.13.149
+**Server IP: 51.250.13.149**
 
-### Tech stack:  
+**Tech stack:  
 - Html / CSS
 - Javascript
 - React
