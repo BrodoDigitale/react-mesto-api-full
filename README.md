@@ -11,12 +11,12 @@ Functionality is similar to instagram and allows to download and share photos of
 ![](frontend/public/mesto-react_preview_640px.gif)
 
 ### Implemented functionality: 
-- Authorization and registration of users,
-- User profile editing,
-- Creation of new posts,
-- Deletion of posts,
-- Liking and disliking of posts.
-- 
+- Authorization and registration of users
+- User profile editing
+- Creation of new posts
+- Deletion of posts
+- Liking and disliking of posts
+
 ### Tech stack:  
 - Html / CSS
 - Javascript
