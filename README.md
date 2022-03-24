@@ -5,7 +5,7 @@ Functionality is similar to instagram and allows to download and share photos of
 
 **[See deploy of the project](https://mesto.sensi.nomoredomains.rocks)**  
 **[Figma layout](https://www.figma.com/file/crdG0H4KMEK8C3P7KDSoPq/Diploma_Sensi)**  
-**[Repository for back-end part of the project](https://github.com/BrodoDigitale/movies-explorer-api)** 
+**[Repository for back-end part of the project](https://github.com/BrodoDigitale/express-mesto)** 
 
 **Server IP: 51.250.13.149**
 
